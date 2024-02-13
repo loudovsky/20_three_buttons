@@ -23,13 +23,12 @@ let myBody = document.querySelector('body')
 myBody.addEventListener('click', function(e) {
     if (e.target.classList.contains("button")) {
       e.target.classList.toggle('red')
-      let nextButton = e.target.nextElementSibling;
-        if (nextButton.classList.contains('red')) {
-            nextButton.classList.remove('red');
-        }
-       let previousButton = e.target.previousElementSibling;
-       if (previousButton.classList.contains('red')) {
-        previousButton.classList.remove('red');
-        }
     }
-});
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+      if (button !== e.target && button.classList.contains('red')) {
+        // Retirez la classe 'red' des autres boutons
+        button.classList.remove('red');
+      }
+    })
+})
