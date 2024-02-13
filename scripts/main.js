@@ -30,13 +30,6 @@ myBody.addEventListener('click', function(e) {
        let previousButton = e.target.previousElementSibling;
        if (previousButton.classList.contains('red')) {
         previousButton.classList.remove('red');
+        }
     }
-    }
-  });
-
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/loudovsky/20_three_buttons.git
-git push -u origin main
+});
