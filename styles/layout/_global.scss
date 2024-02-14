@@ -1,7 +1,16 @@
-.pink {
+.wrapper {
+    margin : 50px auto;
+    width: 800px;
+    text-align: center;
+}
+.button {
     background-color: pink;
+    border: 1px red solid;
+    border-radius: 3px;
 }
 
 .red {
     background-color: crimson;
+    border-color: #000;
+    color:#fff;
 }

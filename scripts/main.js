@@ -1,34 +1,19 @@
-let myButton = document.querySelectorAll('button')
-let myBody = document.querySelector('body')
-
-/*myButton.forEach(element => {
-    console.log(myButton);
-    element.addEventListener('click',function() {
-        element.classList.toggle("red")
-        element.nextSibling.classList.remove("red")
-        element[2].setAttribute("class","")
-    })
-    /*element[1].addEventListener('click',function() {
-        element[1].classList.toggle("red")
-        element[0].setAttribute("class","")
-        element[2].setAttribute("class","")
-    })
-    element[2].addEventListener('click',function() {
-        element[2].classList.toggle("red")
-        element[0].setAttribute("class","")
-        element[1].setAttribute("class","")
-    })
-});*/
+const myBody = document.querySelector('body')
 
 myBody.addEventListener('click', function(e) {
-    if (e.target.classList.contains("button")) {
-      e.target.classList.toggle('red')
+  if(e.target.classList.contains('button')) {
+    if (e.target.classList.contains('red')){
+      e.target.classList.remove('red')
     }
-    const buttons = document.querySelectorAll('.button');
-    buttons.forEach(button => {
-      if (button !== e.target && button.classList.contains('red')) {
-        // Retirez la classe 'red' des autres boutons
-        button.classList.remove('red');
+    else {
+      if (myBody.querySelector('.red')){
+        myBody.querySelector('.red').classList.remove('red')
+        e.target.classList.add('red')
       }
-    })
+      else {
+        e.target.classList.add('red')
+      }
+    }
+  }
 })
+
